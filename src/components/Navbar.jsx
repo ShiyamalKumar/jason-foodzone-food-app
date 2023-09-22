@@ -13,6 +13,7 @@ const Navbar = ({ openCartModal }) => {
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/foods">Foods</a></li>
+                    <li><a href="/checkout">Check out</a></li>
                 </ul>
             </div>
             <div className="navbar-right">

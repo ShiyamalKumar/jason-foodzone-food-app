@@ -3,7 +3,7 @@ import '../styles/Foods.css';
 import products from '../assets/products';
 
 
-const Foods = () => {
+const Foods = ({ addToCart }) => {
     const categories = [...new Set(products.map((product) => product.category))];
     const [filter, setFilter] = useState('all');
     const [search, setSearch] = useState('');
@@ -48,17 +48,20 @@ const Foods = () => {
                 </div>
             </div>
             <div className="food-grid">
+
                 {filteredProducts.map((product) => (
                     <div key={product.id} className="food-card">
                         <img src={product.image01} alt={product.title} />
                         <h3>{product.title}</h3>
-                        <p>${product.price.toFixed(2)}</p>
-                        <button>Add to Cart</button>
+                        <div className='bot-grid'>
+                            <h1>${product.price.toFixed(2)}</h1>
+                            <button onClick={() => addToCart(product)}>Add to Cart</button>
+                        </div>
                     </div>
                 ))}
             </div>
-
         </div>
+
     );
 };
 
